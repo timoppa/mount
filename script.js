@@ -1,140 +1,264 @@
 const questions = [
-    {
-    "question": "Your company has decided to make a major revision of their API in order to create better experiences for their developers. They need to keep the old version of the API available and deployable, while allowing new customers and testers to try out the new API. They want to keep the same SSL and DNS records in place to serve both APIs.\n\nWhat should they do?",
+  {
+    "question": "Mountkirk Games wants you to design their new testing strategy. How should the test coverage differ from their existing backends on the other platforms?",
     "options": [
-      "Configure a new load balancer for the new version of the API",
-      "Reconfigure old clients to use a new endpoint for the new API",
-      "Have the old API forward traffic to the new API based on the path",
-      "Use separate backend pools for each API path behind the load balancer"
+      "Tests should scale well beyond the prior approaches",
+      "Unit tests are no longer required, only end-to-end tests",
+      "Tests should be applied after the release is in the production environment",
+      "Tests should include directly testing the Google Cloud Platform (GCP) infrastructure"
     ],
     "answer": [
-      "Use separate backend pools for each API path behind the load balancer"
+      "Tests should scale well beyond the prior approaches"
     ],
     "multiple": false
   },
   {
-    "question": "Your company plans to migrate a multi-petabyte data set to the cloud. The data set must be available 24hrs a day. Your business analysts have experience only with using a SQL interface.\n\nHow should you store the data to optimize it for ease of analysis?",
+    "question": "Mountkirk Games has deployed their new backend on Google Cloud Platform (GCP). You want to create a through testing process for new versions of the backend before they are released to the public. You want the testing environment to scale in an economical way. How should you design the process?",
     "options": [
-      "Load data into Google BigQuery",
-      "Insert data into Google Cloud SQL",
-      "Put flat files into Google Cloud Storage",
-      "Stream data into Google Cloud Datastore"
+      "Create a scalable environment in GCP for simulating production load",
+      "Use the existing infrastructure to test the GCP-based backend at scale",
+      "Build stress tests into each component of your application using resources internal to GCP to simulate load",
+      "Create a set of static environments in GCP to test different levels of load \u05d2\u20ac\" for example, high, medium, and low"
     ],
     "answer": [
-      "Load data into Google BigQuery"
+      "Create a scalable environment in GCP for simulating production load"
     ],
     "multiple": false
   },
   {
-    "question": "The operations manager asks you for a list of recommended practices that she should consider when migrating a J2EE application to the cloud.\n\nWhich three practices should you recommend? (Choose three.)",
+    "question": "Mountkirk Games wants to set up a continuous delivery pipeline. Their architecture includes many small services that they want to be able to update and roll back quickly. Mountkirk Games has the following requirements:\n\u2711 Services are deployed redundantly across multiple regions in the US and Europe\n\u2711 Only frontend services are exposed on the public internet\n\u2711 They can provide a single frontend IP for their fleet of services\n\u2711 Deployment artifacts are immutable\nWhich set of products should they use?",
     "options": [
-      "Port the application code to run on Google App Engine",
-      "Integrate Cloud Dataflow into the application to capture real-time metrics",
-      "Instrument the application with a monitoring tool like Stackdriver Debugger",
-      "Select an automation framework to reliably provision the cloud infrastructure",
-      "Deploy a continuous integration tool with automated testing in a staging environment",
-      "Migrate from MySQL to a managed NoSQL database like Google Cloud Datastore or Bigtable"
+      "Google Cloud Storage, Google Cloud Dataflow, Google Compute Engine",
+      "Google Cloud Storage, Google App Engine, Google Network Load Balancer",
+      "Google Kubernetes Registry, Google Container Engine, Google HTTP(S) Load Balancer",
+      "Google Cloud Functions, Google Cloud Pub/Sub, Google Cloud Deployment Manager"
     ],
     "answer": [
-      "Instrument the application with a monitoring tool like Stackdriver Debugger",
-      "Select an automation framework to reliably provision the cloud infrastructure",
-      "Deploy a continuous integration tool with automated testing in a staging environment"
+      "Google Kubernetes Registry, Google Container Engine, Google HTTP(S) Load Balancer"
+    ],
+    "multiple": false
+  },
+  {
+    "question": "Mountkirk Games' gaming servers are not automatically scaling properly. Last month, they rolled out a new feature, which suddenly became very popular. A record number of users are trying to use the service, but many of them are getting 503 errors and very slow response times. What should they investigate first?",
+    "options": [
+      "Verify that the database is online",
+      "Verify that the project quota hasn't been exceeded",
+      "Verify that the new feature code did not introduce any performance bugs",
+      "Verify that the load-testing team is not running their tool against production"
+    ],
+    "answer": [
+      "Verify that the project quota hasn't been exceeded"
+    ],
+    "multiple": false
+  },
+  {
+    "question": "Mountkirk Games needs to create a repeatable and configurable mechanism for deploying isolated application environments. Developers and testers can access each other's environments and resources, but they cannot access staging or production resources. The staging environment needs access to some services from production.\nWhat should you do to isolate development environments from staging and production?",
+    "options": [
+      "Create a project for development and test and another for staging and production",
+      "Create a network for development and test and another for staging and production",
+      "Create one subnetwork for development and another for staging and production",
+      "Create one project for development, a second for staging and a third for production"
+    ],
+    "answer": [
+      "Create one project for development, a second for staging and a third for production"
+    ],
+    "multiple": false
+  },
+  {
+    "question": "Mountkirk Games wants to set up a real-time analytics platform for their new game. The new platform must meet their technical requirements.\nWhich combination of Google technologies will meet all of their requirements?",
+    "options": [
+      "Kubernetes Engine, Cloud Pub/Sub, and Cloud SQL",
+      "Cloud Dataflow, Cloud Storage, Cloud Pub/Sub, and BigQuery",
+      "Cloud SQL, Cloud Storage, Cloud Pub/Sub, and Cloud Dataflow",
+      "Cloud Dataproc, Cloud Pub/Sub, Cloud SQL, and Cloud Dataflow",
+      "Cloud Pub/Sub, Compute Engine, Cloud Storage, and Cloud Dataproc"
+    ],
+    "answer": [
+      "Cloud Dataflow, Cloud Storage, Cloud Pub/Sub, and BigQuery"
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. Mountkirk Games wants to migrate from their current analytics and statistics reporting model to one that meets their technical requirements on Google Cloud Platform.\nWhich two steps should be part of their migration plan? (Choose two.)",
+    "options": [
+      "Evaluate the impact of migrating their current batch ETL code to Cloud Dataflow.",
+      "Write a schema migration plan to denormalize data for better performance in BigQuery.",
+      "Draw an architecture diagram that shows how to move from a single MySQL database to a MySQL cluster.",
+      "Load 10 TB of analytics data from a previous game into a Cloud SQL instance, and run test queries against the full dataset to confirm that they complete successfully.",
+      "Integrate Cloud Armor to defend against possible SQL injection attacks in analytics files uploaded to Cloud Storage."
+    ],
+    "answer": [
+      "Evaluate the impact of migrating their current batch ETL code to Cloud Dataflow.;Write a schema migration plan to denormalize data for better performance in BigQuery."
     ],
     "multiple": true
   },
   {
-    "question": "A news feed web service has the following code running on Google App Engine. During peak load, users report that they can see news articles they already viewed.\n\nWhat is the most likely cause of this problem?\n\nhttps://www.examtopics.com/assets/media/exam-media/04339/0007100001.png",
+    "question": "For this question, refer to the Mountkirk Games case study. You need to analyze and define the technical architecture for the compute workloads for your company, Mountkirk Games. Considering the Mountkirk Games business and technical requirements, what should you do?",
     "options": [
-      "The session variable is local to just a single instance",
-      "The session variable is being overwritten in Cloud Datastore",
-      "The URL of the API needs to be modified to prevent caching",
-      "The HTTP Expires header needs to be set to -1 stop caching"
+      "Create network load balancers. Use preemptible Compute Engine instances.",
+      "Create network load balancers. Use non-preemptible Compute Engine instances.",
+      "Create a global load balancer with managed instance groups and autoscaling policies. Use preemptible Compute Engine instances.",
+      "Create a global load balancer with managed instance groups and autoscaling policies. Use non-preemptible Compute Engine instances."
     ],
     "answer": [
-      "The session variable is local to just a single instance"
+      "Create a global load balancer with managed instance groups and autoscaling policies. Use non-preemptible Compute Engine instances."
     ],
     "multiple": false
   },
   {
-    "question": "An application development team believes their current logging tool will not meet their needs for their new cloud-based product. They want a better tool to capture errors and help them analyze their historical log data. You want to help them find a solution that meets their needs.\n\nWhat should you do?",
+    "question": "For this question, refer to the Mountkirk Games case study. Mountkirk Games wants to design their solution for the future in order to take advantage of cloud and technology improvements as they become available. Which two steps should they take? (Choose two.)",
     "options": [
-      "Direct them to download and install the Google StackDriver logging agent",
-      "Send them a list of online resources about logging best practices",
-      "Help them define their requirements and assess viable logging tools",
-      "Help them upgrade their current tool to take advantage of any new features"
+      "Store as much analytics and game activity data as financially feasible today so it can be used to train machine learning models to predict user behavior in the future.",
+      "Begin packaging their game backend artifacts in container images and running them on Google Kubernetes Engine to improve the ability to scale up or down based on game activity.",
+      "Set up a CI/CD pipeline using Jenkins and Spinnaker to automate canary deployments and improve development velocity.",
+      "Adopt a schema versioning tool to reduce downtime when adding new game features that require storing additional player data in the database.",
+      "Implement a weekly rolling maintenance process for the Linux virtual machines so they can apply critical kernel patches and package updates and reduce the risk of 0-day vulnerabilities."
     ],
     "answer": [
-      "Direct them to download and install the Google StackDriver logging agent"
-    ],
-    "multiple": false
-  },
-  {
-    "question": "You need to reduce the number of unplanned rollbacks of erroneous production deployments in your company's web hosting platform. Improvement to the QA/Test processes accomplished an 80% reduction.\n\nWhich additional two approaches can you take to further reduce the rollbacks? (Choose two.)",
-    "options": [
-      "Introduce a green-blue deployment model",
-      "Replace the QA environment with canary releases",
-      "Fragment the monolithic platform into microservices",
-      "Reduce the platform's dependency on relational database systems",
-      "Replace the platform's relational database systems with a NoSQL database"
-    ],
-    "answer": [
-      "Introduce a green-blue deployment model",
-      "Fragment the monolithic platform into microservices"
+      "Store as much analytics and game activity data as financially feasible today so it can be used to train machine learning models to predict user behavior in the future.;Begin packaging their game backend artifacts in container images and running them on Google Kubernetes Engine to improve the ability to scale up or down based on game activity."
     ],
     "multiple": true
   },
   {
-    "question": "To reduce costs, the Director of Engineering has required all developers to move their development infrastructure resources from on-premises virtual machines (VMs) to Google Cloud Platform. These resources go through multiple start/stop events during the day and require state to persist. You have been asked to design the process of running a development environment in Google Cloud while providing cost visibility to the finance department.\n\nWhich two steps should you take? (Choose two.)",
+    "question": "For this question, refer to the Mountkirk Games case study. Mountkirk Games wants you to design a way to test the analytics platform's resilience to changes in mobile network latency. What should you do?",
     "options": [
-      "Use the - -no-auto-delete flag on all persistent disks and stop the VM",
-      "Use the - -auto-delete flag on all persistent disks and terminate the VM",
-      "Apply VM CPU utilization label and include it in the BigQuery billing export",
-      "Use Google BigQuery billing export and labels to associate cost to groups",
-      "Store all state into local SSD, snapshot the persistent disks, and terminate the VM",
-      "Store all state in Google Cloud Storage, snapshot the persistent disks, and terminate the VM"
+      "Deploy failure injection software to the game analytics platform that can inject additional latency to mobile client analytics traffic.",
+      "Build a test client that can be run from a mobile phone emulator on a Compute Engine virtual machine, and run multiple copies in Google Cloud Platform regions all over the world to generate realistic traffic.",
+      "Add the ability to introduce a random amount of delay before beginning to process analytics files uploaded from mobile devices.",
+      "Create an opt-in beta of the game that runs on players' mobile devices and collects response times from analytics endpoints running in Google Cloud Platform regions all over the world."
     ],
     "answer": [
-      "Use the - -no-auto-delete flag on all persistent disks and stop the VM",
-      "Use Google BigQuery billing export and labels to associate cost to groups"
-    ],
-    "multiple": true
-  },
-  {
-    "question": "Your company wants to track whether someone is present in a meeting room reserved for a scheduled meeting. There are 1000 meeting rooms across 5 offices on 3 continents. Each room is equipped with a motion sensor that reports its status every second. The data from the motion detector includes only a sensor ID and several different discrete items of information. Analysts will use this data, together with information about account owners and office locations.\n\nWhich database type should you use?",
-    "options": [
-      "Flat file",
-      "NoSQL",
-      "Relational",
-      "Blobstore"
-    ],
-    "answer": [
-      "NoSQL"
+      "Deploy failure injection software to the game analytics platform that can inject additional latency to mobile client analytics traffic."
     ],
     "multiple": false
   },
   {
-    "question": "You set up an autoscaling instance group to serve web traffic for an upcoming launch. After configuring the instance group as a backend service to an HTTP(S) load balancer, you notice that virtual machine (VM) instances are being terminated and re-launched every minute. The instances do not have a public IP address.\n\nYou have verified the appropriate web response is coming from each instance using the curl command. You want to ensure the backend is configured correctly.\n\nWhat should you do?",
+    "question": "For this question, refer to the Mountkirk Games case study. For this question, refer to the Mountkirk Games case study. You need to analyze and define the technical architecture for the database workloads for your company, Mountkirk Games. Considering the business and technical requirements, what should you do?",
     "options": [
-      "Ensure that a firewall rules exists to allow source traffic on HTTP/HTTPS to reach the load balancer.",
-      "Assign a public IP to each instance and configure a firewall rule to allow the load balancer to reach the instance public IP.",
-      "Ensure that a firewall rule exists to allow load balancer health checks to reach the instances in the instance group.",
-      "Create a tag on each instance with the name of the load balancer. Configure a firewall rule with the name of the load balancer as the source and the instance tag as the destination."
+      "Use Cloud SQL for time series data, and use Cloud Bigtable for historical data queries.",
+      "Use Cloud SQL to replace MySQL, and use Cloud Spanner for historical data queries.",
+      "Use Cloud Bigtable to replace MySQL, and use BigQuery for historical data queries.",
+      "Use Cloud Bigtable for time series data, use Cloud Spanner for transactional data, and use BigQuery for historical data queries."
     ],
     "answer": [
-      "Ensure that a firewall rule exists to allow load balancer health checks to reach the instances in the instance group."
+      "Use Cloud Bigtable for time series data, use Cloud Spanner for transactional data, and use BigQuery for historical data queries."
     ],
     "multiple": false
   },
   {
-    "question": "You write a Python script to connect to Google BigQuery from a Google Compute Engine virtual machine. The script is printing errors that it cannot connect to\nBigQuery.\n\nWhat should you do to fix the script?",
+    "question": "For this question, refer to the Mountkirk Games case study. For this question, refer to the Mountkirk Games case study. Which managed storage option meets Mountkirk's technical requirement for storing game activity in a time series database service?",
     "options": [
-      "Install the latest BigQuery API client library for Python",
-      "Run your script on a new virtual machine with the BigQuery access scope enabled",
-      "Create a new service account with BigQuery access and execute your script with that user",
-      "Install the bq component for gcloud with the command gcloud components install bq."
+      "Cloud Bigtable",
+      "Cloud Spanner",
+      "BigQuery",
+      "Cloud Datastore"
     ],
     "answer": [
-      "Create a new service account with BigQuery access and execute your script with that user"
+      "Cloud Bigtable"
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. For this question, refer to the Mountkirk Games case study. You are in charge of the new Game Backend Platform architecture. The game communicates with the backend over a REST API.\nYou want to follow Google-recommended practices. How should you design the backend?",
+    "options": [
+      "Create an instance template for the backend. For every region, deploy it on a multi-zone managed instance group. Use an L4 load balancer.",
+      "Create an instance template for the backend. For every region, deploy it on a single-zone managed instance group. Use an L4 load balancer.",
+      "Create an instance template for the backend. For every region, deploy it on a multi-zone managed instance group. Use an L7 load balancer.",
+      "Create an instance template for the backend. For every region, deploy it on a single-zone managed instance group. Use an L7 load balancer."
+    ],
+    "answer": [
+      "Create an instance template for the backend. For every region, deploy it on a multi-zone managed instance group. Use an L7 load balancer."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. You need to optimize batch file transfers into Cloud Storage for Mountkirk Games' new Google Cloud solution. The batch files contain game statistics that need to be staged in Cloud Storage and be processed by an extract transform load (ETL) tool. What should you do?",
+    "options": [
+      "Use gsutil to batch move files in sequence.",
+      "Use gsutil to batch copy the files in parallel.",
+      "Use gsutil to extract the files as the first part of ETL.",
+      "Use gsutil to load the files as the last part of ETL."
+    ],
+    "answer": [
+      "Use gsutil to batch copy the files in parallel."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. You are implementing Firestore for Mountkirk Games. Mountkirk Games wants to give a new game programmatic access to a legacy game's Firestore database. Access should be as restricted as possible. What should you do?",
+    "options": [
+      "Create a service account (SA) in the legacy game's Google Cloud project, add a second SA in the new game's IAM page, and then give the Organization Admin role to both SAs.",
+      "Create a service account (SA) in the legacy game's Google Cloud project, give the SA the Organization Admin role, and then give it the Firebase Admin role in both projects.",
+      "Create a service account (SA) in the legacy game's Google Cloud project, add this SA in the new game's IAM page, and then give it the Firebase Admin role in both projects.",
+      "Create a service account (SA) in the legacy game's Google Cloud project, give it the Firebase Admin role, and then migrate the new game to the legacy game's project."
+    ],
+    "answer": [
+      "Create a service account (SA) in the legacy game's Google Cloud project, add this SA in the new game's IAM page, and then give it the Firebase Admin role in both projects."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. Mountkirk Games wants to limit the physical location of resources to their operating Google Cloud regions. What should you do?",
+    "options": [
+      "Configure an organizational policy which constrains where resources can be deployed.",
+      "Configure IAM conditions to limit what resources can be configured.",
+      "Configure the quotas for resources in the regions not being used to 0.",
+      "Configure a custom alert in Cloud Monitoring so you can disable resources as they are created in other regions."
+    ],
+    "answer": [
+      "Configure an organizational policy which constrains where resources can be deployed."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. You need to implement a network ingress for a new game that meets the defined business and technical requirements. Mountkirk Games wants each regional game instance to be located in multiple Google Cloud regions. What should you do?",
+    "options": [
+      "Configure a global load balancer connected to a managed instance group running Compute Engine instances.",
+      "Configure kubemci with a global load balancer and Google Kubernetes Engine.",
+      "Configure a global load balancer with Google Kubernetes Engine.",
+      "Configure Ingress for Anthos with a global load balancer and Google Kubernetes Engine."
+    ],
+    "answer": [
+      "Configure Ingress for Anthos with a global load balancer and Google Kubernetes Engine."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. Your development teams release new versions of games running on Google Kubernetes Engine (GKE) daily. You want to create service level indicators (SLIs) to evaluate the quality of the new versions from the user's perspective. What should you do?",
+    "options": [
+      "Create CPU Utilization and Request Latency as service level indicators.",
+      "Create GKE CPU Utilization and Memory Utilization as service level indicators.",
+      "Create Request Latency and Error Rate as service level indicators.",
+      "Create Server Uptime and Error Rate as service level indicators."
+    ],
+    "answer": [
+      "Create Request Latency and Error Rate as service level indicators."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. Mountkirk Games wants you to secure the connectivity from the new gaming application platform to Google Cloud. You want to streamline the process and follow\nGoogle-recommended practices. What should you do?",
+    "options": [
+      "Configure Workload Identity and service accounts to be used by the application platform.",
+      "Use Kubernetes Secrets, which are obfuscated by default. Configure these Secrets to be used by the application platform.",
+      "Configure Kubernetes Secrets to store the secret, enable Application-Layer Secrets Encryption, and use Cloud Key Management Service (Cloud KMS) to manage the encryption keys. Configure these Secrets to be used by the application platform.",
+      "Configure HashiCorp Vault on Compute Engine, and use customer managed encryption keys and Cloud Key Management Service (Cloud KMS) to manage the encryption keys. Configure these Secrets to be used by the application platform."
+    ],
+    "answer": [
+      "Configure Workload Identity and service accounts to be used by the application platform."
+    ],
+    "multiple": false
+  },
+  {
+    "question": "For this question, refer to the Mountkirk Games case study. Your development team has created a mobile game app. You want to test the new mobile app on Android and iOS devices with a variety of configurations. You need to ensure that testing is efficient and cost-effective. What should you do?",
+    "options": [
+      "Upload your mobile app to the Firebase Test Lab, and test the mobile app on Android and iOS devices.",
+      "Create Android and iOS VMs on Google Cloud, install the mobile app on the VMs, and test the mobile app.",
+      "Create Android and iOS containers on Google Kubernetes Engine (GKE), install the mobile app on the containers, and test the mobile app.",
+      "Upload your mobile app with different configurations to Firebase Hosting and test each configuration."
+    ],
+    "answer": [
+      "Upload your mobile app to the Firebase Test Lab, and test the mobile app on Android and iOS devices."
     ],
     "multiple": false
   },
@@ -163,7 +287,7 @@ function shuffleArray(arr) {
 function updateProgress() {
   const progressPercent = ((currentQuestion) / questions.length) * 100;
   document.getElementById('progressBar').style.width = `${progressPercent}%`;
-  document.getElementById('progressText').textContent = `Question ${currentQuestion + 1}`;
+  document.getElementById('progressText').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
 }
 
 function loadQuestion() {
