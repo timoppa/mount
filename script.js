@@ -88,7 +88,7 @@ const questions = [
       "Integrate Cloud Armor to defend against possible SQL injection attacks in analytics files uploaded to Cloud Storage."
     ],
     "answer": [
-      "Evaluate the impact of migrating their current batch ETL code to Cloud Dataflow."
+      "Evaluate the impact of migrating their current batch ETL code to Cloud Dataflow.",
       "Write a schema migration plan to denormalize data for better performance in BigQuery."
     ],
     "multiple": true
@@ -116,7 +116,7 @@ const questions = [
       "Implement a weekly rolling maintenance process for the Linux virtual machines so they can apply critical kernel patches and package updates and reduce the risk of 0-day vulnerabilities."
     ],
     "answer": [
-      "Store as much analytics and game activity data as financially feasible today so it can be used to train machine learning models to predict user behavior in the future."
+      "Store as much analytics and game activity data as financially feasible today so it can be used to train machine learning models to predict user behavior in the future.",
       "Begin packaging their game backend artifacts in container images and running them on Google Kubernetes Engine to improve the ability to scale up or down based on game activity."
     ],
     "multiple": true
